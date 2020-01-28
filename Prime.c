@@ -10,8 +10,8 @@ void Prime(int num)
     if(c==2)
     {
         printf("Number Is Prime");
-    }
+    }//c=2=>perfect divisors are 1 and number itself
     else{
         printf("Number Is Not Prime");
-    }
+    }//this =>there are multiple perfect divisors
 }
