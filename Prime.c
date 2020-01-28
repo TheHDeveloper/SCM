@@ -18,7 +18,7 @@ void Prime(int num)
 main()
 {
     int x;//Number to be worked upon
-    printf("Enter A Numbber: ");
+    printf("Enter A Number: ");
     scanf("%d",&x);//user entry as integer
     Prime(x);//function call for Prime function
 }
