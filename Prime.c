@@ -15,3 +15,10 @@ void Prime(int num)
         printf("Number Is Not Prime");
     }//this =>there are multiple perfect divisors
 }
+main()
+{
+    int x;
+    printf("Enter A Numbber: ");
+    scanf("%d",&x);
+    Prime(x);
+}
