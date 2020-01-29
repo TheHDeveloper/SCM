@@ -17,3 +17,10 @@ void fib(int n)
         a=a+s;
     }
 }
+main(){
+    int n;
+    printf("Enter Number Of terms in Series: ");
+    scanf("%d",&n);
+    fib(n);
+    return 0;
+}
