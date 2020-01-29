@@ -18,9 +18,9 @@ void fib(int n)
     }
 }
 main(){
-    int n;
+    int n;//n=>Number Of Terms in fibonacci series
     printf("Enter Number Of terms in Series: ");
     scanf("%d",&n);
-    fib(n);
-    return 0;
+    fib(n);//function call for fibonacci function
+    return 0;//nothing to be returned as fib() covers every other part of the code
 }
