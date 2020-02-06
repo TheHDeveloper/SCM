@@ -1,4 +1,3 @@
-
 pos = [" " for i in range(10)]
 pos[5] = "O"
 
@@ -19,13 +18,53 @@ def comp_select():
     possiblemoves = [x for x,letter in enumerate(pos) if letter ==" " and x != 0]
     move = 0
 
-    for let in ["O","X"]:
+    for let in ["X"]:
         for i in possiblemoves:
             bcopy = pos[:]
             bcopy[i] = let
-            if not(is_win(bcopy,let)):
+            if (is_win(bcopy,let)):
                 move = i
                 return move
+    cornersopen =[]
+    for i in possiblemoves:
+        if i in [1,3,7,9]:
+            cornersopen.append(i)
+    if len(cornersopen)>0:
+        move = selectrandom(cornersopen)
+        bcopy[move] ="O"
+        if not(is_win(bcopy,"O")):
+            return move
+        else:
+            cornersopen.remove(move)
+            move = selectrandom(cornersopen)
+            return move
+    edgesopen =[]
+    for i in possiblemoves:
+        if i in [2,4,6,8]:
+            edgesopen.append(i)
+    if len(edgesopen)>0:
+        move = selectrandom(edgesopen)
+        if not(is_win(bcopy,"O")):
+            return move
+        else:
+            edgesopen.remove(move)
+            move = selectrandom(edgesopen)
+            return move
+    if(move == 0 and len(possiblemoves)==0):
+        return move
+    else:
+        move = selectrandom(possiblemoves)
+        return move
+
+def selectrandom(lis):
+    import random
+    ln =len(lis)
+    if(len(lis)>0):
+        r = random.randrange(0,ln)
+        return  lis[r]
+    else:
+        return 0
+
 def is_win(bo,le):
     return (bo[1] == le and bo[2] == le and bo[3] == le) or (bo[1] == le and bo[4] == le and bo[7] == le) or (bo[3] == le and bo[6] == le and bo[9] == le) or (bo[7] == le and bo[8] == le and bo[9] == le) or (bo[4] == le and bo[5] == le and bo[6] == le) or (bo[2] == le and bo[5] == le and bo[8] == le) or (bo[1] == le and bo[5] == le and bo[9] == le) or (bo[3] == le and bo[5] == le and bo[7] == le)
     
