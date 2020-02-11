@@ -1,10 +1,10 @@
-pos = [" " for i in range(10)]
-pos[5] = "O"
+pos = [" " for i in range(10)]#Array for Board
+pos[5] = "O"#A.T.Q. Condition,Print 'O' in Middle
 
-def inslet(lett,posi):
-    pos[posi] = lett
+def inslet(lett,posi):#This function insert Letter in Box
+    pos[posi] = lett #Letter to be insterted and position provided as lett and posi 
 
-def spacefree(posi):
+def spacefree(posi): #Function to check if position entered by user is already occupied or not
     return pos[posi] == " "
 
 def print_board():#to display values on board
